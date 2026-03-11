@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Week AI Agents Ate the World (March 2026)</title>
+<link rel="canonical" href="https://chase-xuu.github.io/medium-assets/article4.html">
+</head>
+<body>
+<h1>The Week AI Agents Ate the World (March 2026)</h1>
+<hr />
+<p><img alt="Cover: The Week AI Agents Ate the World" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_00_cover.png" /></p>
+<p>Remember when "AI agent" meant a chatbot with a to-do list? That was six months ago.</p>
+<p>This week, NVIDIA announced an enterprise AI agent platform. OpenAI shipped an AI security auditor that scanned 1.2 million commits. Anthropic released a multi-agent system that reviews your pull requests better than your senior dev. A 22-year-old built a bot that does your homework — login, download, solve, submit — and higher ed collectively lost its mind.</p>
+<p>AI agents aren't a "trend to watch in 2026." They're eating everything. Here's what actually happened.</p>
+<p><img alt="NVIDIA NemoClaw" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_01_nvidia.png" /></p>
+<h2>1. NVIDIA's NemoClaw: The Enterprise Agent Platform Nobody Saw Coming</h2>
+<p>The biggest news dropped today. <a href="https://www.wired.com/story/nvidia-planning-ai-agent-platform-launch-open-source/">WIRED reported</a> that NVIDIA is building NemoClaw — an open-source AI agent platform aimed squarely at enterprise.</p>
+<p>The concept: companies deploy AI agents that handle workflow tasks for employees. Think automated report generation, data pipeline management, customer ticket routing — except the agent actually <em>does</em> the work, not just suggests it.</p>
+<p>NVIDIA has been pitching NemoClaw to enterprise software companies for weeks. The full reveal is expected March 15 at GTC 2026.</p>
+<p>Here's what's interesting: NemoClaw is explicitly inspired by OpenClaw (the personal AI agent that hit 297K GitHub stars). OpenClaw was built for individual users running agents on their own machines. NemoClaw flips it — same philosophy, enterprise scale. CNBC noted that <a href="https://tradersunion.com/news/financial-news/show/1655740-nvidia-stock-climbs-2-7/">NVIDIA stock climbed 2.7%</a> on the news alone.</p>
+<p><strong>The takeaway: NVIDIA just told every enterprise software company that AI agents are the next compute layer. If Jensen Huang is building it, it's not hype anymore.</strong></p>
+<p><img alt="OpenAI Codex Security" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_02_openai.png" /></p>
+<h2>2. OpenAI GPT-5.4: A Million Tokens and an AI Security Cop</h2>
+<p>OpenAI had a double-header this week. On March 5, they dropped <a href="https://www.devflokers.com/blog/ai-breakthroughs-march-2026">GPT-5.4</a> — their "most capable frontier model for professional work."</p>
+<p>The headline number: <strong>1,000,000 token context window</strong> in the API. That's roughly 750,000 words. You could feed it an entire codebase, a company's complete documentation, or every email you've sent this year, and it would hold all of it in memory at once.</p>
+<p>GPT-5.4 can also "steer" itself mid-response — planning steps as it generates. OpenAI claims an 83% win rate on industry knowledge tasks (up from 70.9% for GPT-5.2). They also shipped ChatGPT for Excel on the same day, letting analysts build financial models in natural language with real data from FactSet and Moody's.</p>
+<p>But the real story? <strong>Codex Security.</strong></p>
+<p>Launched March 6, <a href="https://www.axios.com/2026/03/06/openai-codex-security-ai-cyber">Codex Security</a> is an AI-powered code auditor. It scanned 1.2 million commits in its beta, found <strong>792 critical vulnerabilities</strong> and 10,561 high-severity issues. In one case, it caught a cross-tenant authentication bug that human reviewers and basic tools completely missed.</p>
+<p>As someone who's spent months <a href="https://medium.com/@chasexu">finding RCEs in AI agent frameworks</a>, this hits home. The security tooling gap in AI-generated code is massive. OpenAI building a dedicated security agent isn't just smart — it's necessary. When developers are shipping 10x more code with AI assistance, you need AI reviewing it at the same speed.</p>
+<p><strong>The takeaway: GPT-5.4 is impressive, but Codex Security scanning a million commits and catching real bugs? That's the product that actually changes how teams ship software.</strong></p>
+<p><img alt="Anthropic Code Review" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_03_anthropic.png" /></p>
+<h2>3. Anthropic's Code Review: When AI Agents Review Each Other's Work</h2>
+<p>Yesterday, Anthropic <a href="https://techcrunch.com/2026/03/09/anthropic-launches-code-review-tool-to-check-flood-of-ai-generated-code/">launched Code Review in Claude Code</a> — and it's genuinely clever.</p>
+<p>The system dispatches <em>teams</em> of AI agents to review every pull request. Not one agent scanning for patterns. Multiple agents, running in parallel, each checking different aspects: logic errors, security flaws, architectural issues, test coverage gaps.</p>
+<p>Anthropic modeled it on their own internal review process. The irony is beautiful: developers use Claude Code to write code, and now Claude Code sends agent squads to review what it wrote. AI checking AI's homework.</p>
+<p>This isn't academic. As agentic coding tools (Claude Code, Codex, Cursor) drive a surge in PRs, human reviewers can't keep pace. Anthropic's data shows developers are shipping significantly more code per PR — but the review bottleneck is getting worse.</p>
+<p>The timing isn't accidental. Anthropic is having a monster 2026. Revenue is surging. They just <a href="https://www.indiatoday.in/technology/news/story/microsoft-adds-anthropic-claude-cowork-to-copilot-after-saaspocalypse-scare-2879619-2026-03-10">partnered with Microsoft</a> to bring Claude into Copilot. And they're suing over a Pentagon blacklist. It's been a wild quarter.</p>
+<p><strong>The takeaway: The AI code review space just got serious. When both OpenAI (Codex Security) and Anthropic (Code Review) ship security/review agents in the same week, pay attention.</strong></p>
+<p><img alt="Microsoft Copilot Cowork" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_04_microsoft.png" /></p>
+<h2>4. Microsoft's Copilot Cowork: The SaaSpocalypse Response</h2>
+<p>Speaking of the Microsoft-Anthropic deal — it's weird, and I love it.</p>
+<p>Microsoft just launched <a href="https://www.thehansindia.com/tech/microsoft-brings-anthropics-claude-cowork-to-copilot-for-enterprise-ai-automation-1055268">Copilot Cowork</a>, an enterprise AI agent built on Anthropic's Claude. The name "Cowork" is borrowed directly from Anthropic's own product — the same product that <a href="https://www.jobadvisor.link/2026/03/microsoft-launches-ai-tool-that.html">wiped hundreds of billions off Microsoft's market cap</a> when Anthropic first announced it.</p>
+<p>Microsoft's response? "If you can't beat them, license them."</p>
+<p>Copilot Cowork ships as part of the $30/user/month M365 Copilot package. The pitch: AI agents that handle enterprise workflows — scheduling, document synthesis, cross-app automation — powered by Anthropic's Claude Sonnet models.</p>
+<p>The meta-story is wild. Anthropic built Cowork. The stock market panicked ("SaaSpocalypse"). Microsoft's valuation dropped. Microsoft then... partnered with Anthropic and built the same thing into Copilot. That's either brilliant strategy or corporate Stockholm syndrome.</p>
+<p><strong>The takeaway: Microsoft just admitted that Anthropic's agent tech is good enough to power their flagship enterprise product. The AI agent cold war is over — now it's a supply chain.</strong></p>
+<p><img alt="Einstein Homework Bot" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_05_einstein.png" /></p>
+<h2>5. Einstein: The Homework Bot That Broke Higher Ed</h2>
+<p>Advait Paliwal is 22 years old. He built an AI agent called Einstein, posted a demo on X, and <a href="https://www.chronicle.com/article/einstein-may-have-been-a-prank-but-the-agentic-ai-tool-put-higher-ed-on-notice">terrified every university in America</a>.</p>
+<p>What Einstein does: logs into Canvas (the LMS most colleges use), downloads homework assignments, solves them, generates a PDF, and submits it. Fully autonomous. The student doesn't even need to read the assignment.</p>
+<p>The Chronicle of Higher Education called it a crisis. Education podcasts dedicated full episodes to it. Universities started emergency meetings about academic integrity.</p>
+<p>Here's the thing: Einstein runs on OpenClaw. It's not some sophisticated custom system — it's an AI agent with browser access doing exactly what agents are designed to do. Paliwal basically vibe-coded it and let the internet react.</p>
+<p>Whether Einstein was a prank or a product doesn't matter. It exposed a fundamental problem: every system designed for human interaction — LMS platforms, forms, portals — is now an AI attack surface. And the agents are getting better at navigating them every month.</p>
+<p><strong>The takeaway: Einstein isn't special. Any competent AI agent can do what Einstein did. That's the actual crisis.</strong></p>
+<p><img alt="SAI vs AGI" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_06_lecun.png" /></p>
+<h2>6. Yann LeCun Says "AGI" Is Wrong — Proposes SAI Instead</h2>
+<p>Meta's chief AI scientist published a paper that's generating serious debate. Yann LeCun argues that "AGI" (Artificial General Intelligence) is a <a href="https://www.marktechpost.com/2026/03/07/yann-lecuns-new-ai-paper-argues-agi-is-misdefined-and-introduces-superhuman-adaptable-intelligence-sai-instead/">fundamentally flawed concept</a> and proposes replacing it with "SAI" — Superhuman Adaptable Intelligence.</p>
+<p>His argument: human intelligence isn't "general." Humans are specialists who adapt quickly to new domains. We don't have general-purpose brains — we have highly adaptable ones. Building AI that's "general" at everything is the wrong target. Building AI that adapts to specialized domains faster than humans? That's achievable and more useful.</p>
+<p>Ben Goertzel (the AGI researcher) <a href="https://bengoertzel.substack.com/p/lecuns-sai-is-a-special-case-of-agi">fired back on Substack</a>, arguing SAI is just a subset of AGI, not a replacement. The academic fight is entertaining, but LeCun's core point matters for practitioners: stop waiting for magic general AI. Build systems that adapt.</p>
+<p>This aligns with what we're seeing in practice. Every major agent launch this week is about <em>specialized</em> adaptation — code review agents, security agents, enterprise workflow agents. Nobody shipped "AGI" this week. They shipped tools that do specific things really well.</p>
+<p><strong>The takeaway: LeCun might be right. The AI systems winning right now aren't "general" — they're specialized agents that adapt to specific workflows. That's SAI in practice, whether we call it that or not.</strong></p>
+<p><img alt="The Numbers" src="https://chase-xuu.github.io/medium-assets/images/week4/week4_07_numbers.png" /></p>
+<h2>7. The Numbers That Tell the Real Story</h2>
+<p>A few data points that didn't fit neatly into a section but matter:</p>
+<ul>
+<li><strong>Gartner predicts $2.52 trillion</strong> in worldwide AI spending in 2026. That's not R&amp;D budgets — that's actual deployment.</li>
+<li><strong>Google Gemini 3.1 Flash-Lite</strong> launched March 3 at <strong>$0.25 per million input tokens</strong>. That's 2.5x faster than Gemini 2.5 Flash. The race to zero-cost inference is accelerating.</li>
+<li><strong>70% of enterprises</strong> now run AI agents, but most have weak identity and access management. The Hacker News calls these unmanaged agents <a href="https://thehackernews.com/2026/03/ai-agents-next-wave-identity-dark.html">"identity dark matter"</a> — powerful, invisible, and ungoverned.</li>
+<li><strong>7 major AI companies</strong> signed a White House pledge to cover data center power costs. The energy conversation is getting serious.</li>
+<li><strong>OpenClaw hit 297K GitHub stars</strong>, making it the most-starred AI project ever. NVIDIA building NemoClaw on the same philosophy validates the entire approach.</li>
+</ul>
+<h2>FAQ</h2>
+<p><strong>What is NemoClaw?</strong>
+NemoClaw is NVIDIA's upcoming open-source AI agent platform for enterprises. It allows companies to deploy AI agents that perform workflow tasks for employees. Expected full reveal at GTC 2026 on March 15.</p>
+<p><strong>What's the difference between GPT-5.4 and GPT-5.2?</strong>
+GPT-5.4 brings a 1 million token context window, mid-response step planning, and improved efficiency. It scores 83% on industry knowledge tasks vs 70.9% for GPT-5.2.</p>
+<p><strong>What is Codex Security?</strong>
+OpenAI's AI-powered code auditor. It scans codebases for vulnerabilities, found 792 critical issues across 1.2 million commits in beta, and reduces false positives by over 90%.</p>
+<p><strong>What is Anthropic Code Review?</strong>
+A multi-agent system built into Claude Code that dispatches teams of AI agents to review pull requests in parallel. Launched March 9, 2026.</p>
+<p><strong>What is SAI (Superhuman Adaptable Intelligence)?</strong>
+A concept proposed by Yann LeCun as a replacement for "AGI." It argues AI should focus on superhuman adaptation to specific domains rather than general-purpose intelligence.</p>
+<hr />
+<p><em>Chase Xu is a CV engineer and AI security researcher who has submitted 20+ PRs to AI agent frameworks. He writes about AI from the trenches — not the press releases.</em></p>
+</body>
+</html>
