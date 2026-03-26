@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>OpenAI Just Killed Sora. Claude Took Over Your Mac. And the Most Popular AI Library Was Malware.</title></head>
+<body><h1>OpenAI Just Killed Sora. Claude Took Over Your Mac. And the Most Popular AI Library Was Malware.</h1>
+<p><em>Seven stories from the week AI decided to break everything at once.</em></p>
+<hr />
+<p><img alt="Cover Image" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/cover.jpg" /></p>
+<h2>1. OpenAI Speedran Self-Destruction in a Single Tuesday</h2>
+<p>Here's what OpenAI did on one Tuesday: killed Sora, nuked the Disney deal, dropped its shopping feature, handed off safety oversight, revealed a new model codenamed "Spud," raised another $10 billion, and committed $1 billion to philanthropy.</p>
+<p>That's not a news day. That's a corporate seizure.</p>
+<p>Sora — the AI video generator that briefly topped the App Store — is done. Six months after launch, three months after Disney signed a licensing deal covering 200+ characters from Marvel, Pixar, and Star Wars, OpenAI pulled the plug on both the app and the API. Disney released a polite statement. Employees said the quiet part out loud: Sora was burning GPUs at a rate that couldn't be justified while Anthropic and Google were eating their lunch on the model side.</p>
+<p>But the Sora shutdown was just one piece of a broader restructuring. Sam Altman told staff he's stepping back from direct oversight of safety and security teams to focus on "building data centers at unprecedented scale." Read that sentence again. The CEO of the company that once said it existed to ensure AI safety... is leaving safety to focus on scale.</p>
+<p>The new model, Spud, has completed initial development. The $10B raise brings their latest round to roughly $120 billion. And the OpenAI Foundation, sitting on ~$130B in equity, named its leadership team.</p>
+<p><strong>The takeaway:</strong> OpenAI is no longer an AI safety company that ships products. It's an infrastructure company that ships press releases. And they're speedrunning the transformation.</p>
+<hr />
+<p><img alt="Arm Chip" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/arm-chip.jpg" /></p>
+<h2>2. Arm Made Its First Chip in 35 Years. Meta Bought It Before You Heard About It.</h2>
+<p>For 35 years, Arm did one thing: design chip architectures and license them to everyone else. Qualcomm, Apple, Samsung, Nvidia — they all built on Arm's blueprints. Arm never made the actual silicon.</p>
+<p>Until now.</p>
+<p>The AGI CPU (yes, that's what they called it) is Arm's first in-house data center chip. It's a 136-core, 3nm beast designed specifically for AI inference, drawing 300 watts. Meta is the launch customer, with OpenAI, Cerebras, Cloudflare, and SAP already signed up.</p>
+<p>Arm's stock jumped 16% on the announcement. Wall Street finally understood: this isn't a licensing company pivoting to hardware. This is a company that spent three decades learning what every chip customer needs, then built the chip itself.</p>
+<p>The timing is perfect. Meta is spending $135 billion on AI infrastructure this year. They need inference chips that aren't Nvidia, because everyone needs chips that aren't Nvidia. The AI compute bottleneck is real, and Arm just showed up with a 136-core solution and a Rolodex of every chip designer on the planet.</p>
+<p><strong>The takeaway:</strong> Arm went from "we design, you build" to "actually, we'll build too." When the company that taught the industry how to make chips decides to make its own, pay attention.</p>
+<hr />
+<p><img alt="Claude Computer Use" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/claude-mac.jpg" /></p>
+<h2>3. Claude Can Now Use Your Mac While You Get Coffee</h2>
+<p>Anthropic launched computer use in Claude Cowork and Claude Code this week. What that means in practice: you can text Claude from your iPhone, tell it to "export the pitch deck as PDF and attach it to the 3pm meeting invite," then come back to your Mac and find it done.</p>
+<p>Claude literally takes over your screen. Opens apps. Navigates your browser. Fills spreadsheets. Clicks buttons. It's like a remote desktop session, except the person on the other end is an AI that never gets distracted, never takes breaks, and works at the speed of API calls.</p>
+<p>The feature pairs with Dispatch, released last week, which lets you assign tasks from your phone. Together, they create something that feels less like a chatbot and more like a remote employee. One that happens to live inside your computer.</p>
+<p>Anthropic also dropped some fascinating data from their Economic Index: experienced Claude users don't just hand over full autonomy. They iterate more carefully, tackle higher-value tasks, and maintain tighter oversight. The best users aren't the ones who trust the AI the most — they're the ones who know exactly how much to trust it.</p>
+<p><strong>The takeaway:</strong> The AI agent war just moved from "chatbots that answer questions" to "agents that do your job while you're at Starbucks." If your workflow involves a mouse and a keyboard, Claude is coming for it.</p>
+<hr />
+<p><img alt="LiteLLM Hack" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/litellm-hack.jpg" /></p>
+<h2>4. The Most Popular AI Library on PyPI Was Silently Stealing Your Credentials</h2>
+<p>On March 24, LiteLLM version 1.82.8 was published to PyPI. It looked normal. It wasn't.</p>
+<p>A threat actor called TeamPCP had compromised LiteLLM's CI/CD pipeline through a poisoned Trivy GitHub Action — a security scanner, ironically — and used stolen PyPI credentials to upload a backdoored version. The malicious code, hidden in a <code>.pth</code> file called <code>litellm_init.pth</code>, executed automatically on every Python startup. Not when you imported LiteLLM. On every Python startup.</p>
+<p>It harvested SSH keys, cloud credentials, environment variables, and secrets. Then it encrypted everything and exfiltrated it. It also attempted lateral movement across Kubernetes clusters.</p>
+<p>LiteLLM has 97 million monthly downloads. It's the most popular LLM proxy in the Python ecosystem. If you're running any AI infrastructure in production, there's a non-trivial chance it's in your dependency tree.</p>
+<p>Andrej Karpathy signal-boosted the warning. Snyk published a full technical breakdown. LiteLLM's team posted a security update confirming the attacker "bypassed official CI/CD workflows and uploaded malicious packages directly to PyPI."</p>
+<p><strong>The takeaway:</strong> Your AI stack's biggest vulnerability isn't prompt injection. It isn't jailbreaks. It's <code>pip install</code>. The supply chain is the attack surface, and nobody's watching.</p>
+<hr />
+<p><img alt="Amazon Robot" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/amazon-robot.jpg" /></p>
+<h2>5. Amazon Just Bought a Company That Makes Kid-Sized Humanoid Robots</h2>
+<p>Amazon acquired Fauna Robotics, a two-year-old startup founded by former Meta and Google engineers who build "approachable" humanoid robots. The robots are kid-sized. They're designed for consumers and small businesses. And now they belong to the company that already has Alexa in your kitchen and drones eyeing your backyard.</p>
+<p>This is Amazon's entry into the consumer humanoid market, and the timing feels intentional. Tesla is shipping Optimus. Figure is raising billions. Every major tech company is placing bets on physical AI. Amazon's bet is that the winning humanoid won't be a six-foot warehouse worker — it'll be something small enough to not terrify your children.</p>
+<p>The Fauna robots, branded "Sprout," are designed around a concept the founders call "approachability." In a market where everyone is racing to build bigger, stronger, more capable robots, Amazon is going the opposite direction: smaller, friendlier, and aimed at your living room.</p>
+<p><strong>The takeaway:</strong> The humanoid robot race just split into two lanes. Industrial giants versus consumer companions. Amazon chose companions. Your future Alexa might walk.</p>
+<hr />
+<p><img alt="Apple Siri" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/apple-siri.jpg" /></p>
+<h2>6. Apple Is Finally Admitting Siri Needs to Be Rebuilt from Scratch</h2>
+<p>Bloomberg's Mark Gurman reported that Apple is testing a standalone Siri chatbot app for iOS 27, complete with a new "Ask Siri" button that works across the entire operating system. The plan: make Siri compete with Claude and ChatGPT. For real this time.</p>
+<p>Let's acknowledge the elephant in the room. Apple has been "improving Siri" for a decade. Every WWDC brings promises. Every fall brings disappointment. Siri remains the assistant that confidently mishears your requests and then opens Safari to search for what you actually said.</p>
+<p>But this time feels different. A standalone app means Apple is treating Siri as a product, not a feature. An "Ask Siri" button across the OS means they're putting it where you can actually find it. And framing it as competition with Claude and ChatGPT means they're finally benchmarking against the right standard.</p>
+<p>The question isn't whether Apple can build a good chatbot. They have the hardware, the data, the distribution. The question is whether Apple's institutional allergy to cloud-first AI and their obsession with on-device processing will let them compete with models that have been cloud-native from day one.</p>
+<p><strong>The takeaway:</strong> Apple joining the AI chatbot race in 2026 is like showing up to a marathon at mile 20. They have the legs. The question is whether they have the lungs.</p>
+<hr />
+<p><img alt="Huawei Atlas" src="https://chase-xuu.github.io/medium-assets/images/2026-03-25/huawei-atlas.jpg" /></p>
+<h2>7. Huawei Says Its New Chip Crushes Nvidia's. Here's Why That Matters.</h2>
+<p>Huawei unveiled the Atlas 350 AI accelerator card, powered by the Ascend 950PR chip with in-house HBM (high-bandwidth memory). The headline number: 1.56 petaflops of FP4 compute and up to 112GB of memory. Huawei claims it delivers 2.8x the performance of Nvidia's H20, the chip specifically designed for the Chinese market under US export controls.</p>
+<p>Let's be real about what's happening here. The US restricted Nvidia from selling its best chips to China. So China built its own. And now Huawei is claiming their chip isn't just "good enough" — it's nearly three times faster than what Nvidia is allowed to sell them.</p>
+<p>The Atlas 350 debuted at Huawei's China Partner Conference alongside a full stack of AI inference solutions. It's not just a chip announcement — it's a statement. The message to Washington: your export controls created a competitor, and now that competitor is claiming to be better.</p>
+<p>Of course, benchmark claims from the manufacturer deserve skepticism. Independent testing will tell the real story. But even if Huawei is exaggerating by 50%, a chip that's 1.4x the H20 is still a massive achievement for a company that was supposed to be crippled by sanctions.</p>
+<p><strong>The takeaway:</strong> Export controls were supposed to keep China two generations behind in AI chips. Huawei just showed up claiming to be a generation ahead. The chip war has a plot twist.</p>
+<hr />
+<h2>The Bottom Line</h2>
+<p>This week wasn't just busy. It was a preview of how the next decade plays out.</p>
+<p>OpenAI is consolidating around infrastructure and abandoning its distractions. Anthropic is making agents that actually do work. Arm is disrupting the chip market it helped create. The AI supply chain is under active attack. Amazon wants robots in your home. Apple is rebuilding its AI from scratch. And China is building chips that weren't supposed to exist.</p>
+<p>The pattern? Everyone is going all-in. The companies that were hedging are now betting everything. The companies that were cautious are now reckless. And the companies that were banned from competing are competing anyway.</p>
+<p>Buckle up. This is just March.</p>
+<hr />
+<p><em>Follow me for weekly AI breakdowns. No hype. No fluff. Just what actually happened and why it matters.</em></p></body></html>
